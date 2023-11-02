@@ -7,14 +7,14 @@ $(function () {
     $("#tb_results > tbody").html(htmlStr);
   }
 
-  template.defaults.imports.timeFormat = function (date) {
-    var timeArr = date.split("."),
-      sec = timeArr[0] % 60,
-      min;
-    timeArr[0] >= 60 ? (min = 1) : (min = 0);
-    sec < 10 ? (sec = "0" + sec) : null;
-    return `${min}:${sec}.${timeArr[1]}`;
-  };
+//  template.defaults.imports.timeFormat = function (date) {
+//    var timeArr = date.split("."),
+//      sec = timeArr[0] % 60,
+//      min;
+//    timeArr[0] >= 60 ? (min = 1) : (min = 0);
+//    sec < 10 ? (sec = "0" + sec) : null;
+//    return `${min}:${sec}.${timeArr[1]}`;
+//  };
   //获取json数据
   $.ajax({
     url: "./speed.json?v=202003191938",
@@ -26,66 +26,67 @@ $(function () {
   });
   setTable(jsonData);
 
-  $(".mods,.lv,.powerType,.producer").on("change", function () {
-    // screen($(this).val())
-    screen();
-  });
+//  $(".mods,.lv,.powerType,.producer").on("change", function () {
+//    // screen($(this).val())
+//    screen();
+//  });
   // 筛选
   function screen() {
-    var lv = $(".lv").val(),
-      mods = $(".mods").val(),
-      powerType = $(".powerType").val(),
-      producer = $(".producer").val(),
+    var
+//	  lv = $(".lv").val(),
+//      mods = $(".mods").val(),
+//      powerType = $(".powerType").val(),
+//      producer = $(".producer").val(),
       search = $('.search').val().toLowerCase();
       arr = jsonData;
 
     // 车型级别
-    if (lv !== "all") {
-      if (lv == "SUV") {
-        arr = jsonData.filter(function (v) {
-          return ["SUV1", "SUV2", "SUV3", "SUV4"].includes(v.lv);
-        });
-      } else if (lv == "0") {
-        arr = jsonData.filter(function (v) {
-          return ["A00", "A0", "A", "B", "C","D"].includes(v.lv);
-        });
-      } else {
-        arr = jsonData.filter(function (v) {
-          return v.lv == lv;
-        });
-      }
-    }
+//    if (lv !== "all") {
+//      if (lv == "SUV") {
+//        arr = jsonData.filter(function (v) {
+//          return ["SUV1", "SUV2", "SUV3", "SUV4"].includes(v.lv);
+//        });
+//      } else if (lv == "0") {
+//        arr = jsonData.filter(function (v) {
+//          return ["A00", "A0", "A", "B", "C","D"].includes(v.lv);
+//        });
+//      } else {
+//        arr = jsonData.filter(function (v) {
+//          return v.lv == lv;
+//        });
+//      }
+//    }
 
     // 改装程度
-    if (mods == "all") {
-      // setTable(jsonData)
-    } else if (mods == 0) {
-      arr = arr.filter(function (v) {
-        return v.mods <= 0;
-      });
-    } else {
-      arr = arr.filter(function (v) {
-        return v.mods > 0;
-      });
-    }
+//    if (mods == "all") {
+//      // setTable(jsonData)
+//    } else if (mods == 0) {
+//      arr = arr.filter(function (v) {
+//        return v.mods <= 0;
+//      });
+//    } else {
+//      arr = arr.filter(function (v) {
+//        return v.mods > 0;
+//      });
+//    }
 
     // 动力类型： 0 燃油 ， 1 电动
-    if (powerType != "all") {
-      arr = arr.filter(function (v) {
-        return v.powerType == powerType;
-      });
-    }
+//    if (powerType != "all") {
+//      arr = arr.filter(function (v) {
+//        return v.powerType == powerType;
+//      });
+//    }
 
     // 产地： 0 国产， 1 合资 ， 2 进口
-    if (producer != "all") {
-      arr = arr.filter(function (v) {
-        return v.producer == producer;
-      });
-    }
+//    if (producer != "all") {
+//      arr = arr.filter(function (v) {
+//        return v.producer == producer;
+//      });
+//    }
 
     if(search){
       arr = arr.filter((v) => {
-        return v.car.toLowerCase().indexOf(search) != -1;
+        return v.gpu.toLowerCase().indexOf(search) != -1;
       })
     }
 
