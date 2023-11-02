@@ -160,27 +160,27 @@
 	<div class="table-responsive">
 		<table id="tb_results" class="table table-hover">
 			<thead>
-				<th class="ranking">排名</th>
-				<th class="gpu">显卡</th>
-				<th class="model">型号</th>
-				<th class="brand">供应商</th>
-				<th class="core">核心</th>
-				<th class="time_spy" style="width:200px;">TIME SPY</th>
-				<th class="power">功耗/W</th>
-				<th class="cop">能耗比/TS每瓦</th>
-				<th class="furmark_core_temp">FURMARK核心温度/℃</th>
-				<th class="fan_speed">风扇转速/RPM</th>
-				<th class="ambient_temp">室温/℃</th>
-				<th class="note">备注</th>
-				<th class="2077">
+				<th class="ranking t-center">排名</th>
+				<th class="gpu t-center">显卡</th>
+				<th class="model t-center">型号</th>
+				<th class="brand t-center">供应商</th>
+				<th class="core t-center">核心</th>
+				<th class="time_spy t-center" style="width:200px;">TIME SPY</th>
+				<th class="power t-center">功耗/W</th>
+				<th class="cop t-center">能耗比/TS每瓦</th>
+				<th class="furmark_core_temp t-center">FURMARK核心温度/℃</th>
+				<th class="fan_speed t-center">风扇转速/RPM</th>
+				<th class="ambient_temp t-center">室温/℃</th>
+				<th class="note t-center">备注</th>
+				<th class="2077 t-center">
 					<img src="./img/2077.png" alt="" style="width:100px;" class="icon">
 					1080P 最高
 				</th>
-				<th class="red">
+				<th class="red t-center">
 					<img src="./img/red.png" alt="" style="width:100px;" class="icon">
 					2K 高
 				</th>
-				<th class="tr">
+				<th class="tr t-center">
 					<img src="./img/tr.png" alt="" style="width:100px;" class="icon">
 					2K 高
 				</th>
@@ -219,43 +219,22 @@
 <script type="text/template" id="tb">
 
 	{{each data as v i}}
-<tr 
-  class="
-  {{if v.speed < 55}}
-  speed0
-  {{else if v.speed < 60}}
-  speed1
-  {{else if v.speed < 62}}
-  speed2
-  {{else if v.speed < 64}}
-  speed3
-  {{else if v.speed < 66}}
-  speed4
-  {{else if v.speed < 68}}
-  speed5
-  {{else if v.speed > 68}}
-  speed6
-  {{/if}}
-  "
-  >
-    <td>{{i + 1}}</td>
-    <td>
-		<div class="icon-flag {{v.nationality}}"></div>
-		{{v.car}}
-	</td>
-    <td class="t-right">{{v.price}}</td>
-    <td class="t-center">{{v.hp_content}}</td>
-    <td class="gray t-left">{{v.speed | timeFormat}}</td>
-    <td>{{v.tyre}}</td>
-    <td class="t-center">{{v.mods}}</td>
-    <td class="t-center">{{v.temperature}}</td>
-    <td class="black">{{v.Powertrain }}</td>
-    <td class="black">{{v.limit}}</td>
-    <td class="black">{{v.accelerate}}</td>
-    <!-- <td class="black center">{{v.lv}}</td> -->
-    <td>
-      <a href="https://www.bilibili.com/video/{{v.BID}}" target="_blank">{{v.Btitle}}</a>
-        </td>
+<tr class="speed0">
+    <td class="t-center">{{i + 1}}</td>
+    <td class="t-center">{{v.gpu}}</td>
+    <td class="t-center">{{v.model}}</td>
+    <td class="t-center">{{v.brand}}</td>
+	<td class="t-center">{{v.core}}</td>
+	<td class="t-center">{{v.time_spy}}</td>
+	<td class="t-center">{{v.power}}</td>
+	<td class="t-center">{{v.cop}}</td>
+	<td class="t-center">{{v.furmark_core_temp}}</td>
+	<td class="t-center">{{v.fan_speed}}</td>
+	<td class="t-center">{{v.ambient_temp}}</td>
+	<td class="t-center">{{v.note}}</td>
+	<td class="t-center">{{v.2077}}</td>
+	<td class="t-center">{{v.red}}</td>
+	<td class="t-center">{{v.tr}}</td>
   </tr>
   {{/each}}
 
