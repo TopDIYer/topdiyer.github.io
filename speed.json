@@ -122,7 +122,7 @@
 		"furmark_core_temp": "62",
 		"fan_speed": "2190",
 		"ambient_temp": "25",
-		"note": "@PCIE4.0<br>1080P",
+		"note": "@PCIE4.0\n1080P",
 		"cp": "33.47(37.65 XeSS)",
 		"red": "45.95",
 		"tr": "43(47 XeSS)"
@@ -138,7 +138,7 @@
 		"furmark_core_temp": "60",
 		"fan_speed": "2190",
 		"ambient_temp": "25",
-		"note": "@PCIE4.0<br>1080P",
+		"note": "@PCIE4.0\n1080P",
 		"cp": "30.58(35.45 XeSS)",
 		"red": "41.89",
 		"tr": "42(44 XeSS)"
